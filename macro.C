@@ -42,7 +42,8 @@ TStopwatch timer;
 void macro(const int startfile=0, const int endfile=1){
 
   TH1::SetDefaultSumw2();
-
+  bool printDebug = false;
+  
   timer.Start();
   
   //create the trees and set the branch address
@@ -64,7 +65,7 @@ void macro(const int startfile=0, const int endfile=1){
 
   std::string infile;
   
-  infile = "pp_PYTHIA_filelist_MIT.txt";
+  infile = "jetRAA_pp_mc_forest.txt";
   
   std::ifstream instr(infile.c_str(), std::ifstream::in);
   
@@ -113,7 +114,8 @@ void macro(const int startfile=0, const int endfile=1){
     jetTree->SetBranchAddress("jtphi",&phi);
 
     Long64_t nentries = jetTree->GetEntries();
-
+    if(printDebug)nentries = 100;
+    
     for (int i = 0; i < nentries; i++){ //start of event loop. 
 
       jetTree->GetEntry(i);
