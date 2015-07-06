@@ -13,7 +13,7 @@ $ cd CMSSW_5_3_20/src/
   
 $ cmsenv  
 
-$ voms-proxy-init -valid 192:00 --out ~/x509_user_proxy/proxy 
+$ voms-proxy-init -valid 192:00 --out ~/x509_user_proxy/proxy   
 //If you do not have a folder ~/x509_user_proxy create it
 
 the last command makes sure you have a proxy for a long time 
