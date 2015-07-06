@@ -1,10 +1,16 @@
 #!/bin/bash
 
-cd /afs/cern.ch/work/r/rkunnawa/BatchJobsTutorial/CMSSW_5_3_20/src
+cd /afs/cern.ch/work/i/ihuntisa/xrootd/CMSSW_5_3_20/src/Batch_Jobs_xrootd/
 #cmsenv
 eval `scramv1 runtime -sh`
 
-cd /afs/cern.ch/work/r/rkunnawa/BatchJobsTutorial/CMSSW_5_3_20/src
+
+#Added by Ian
+export X509_USER_PROXY=~/x509_user_proxy/proxy
+voms-proxy-init --noregen
+#</Ian>
+
+cd /afs/cern.ch/work/i/ihuntisa/xrootd/CMSSW_5_3_20/src/Batch_Jobs_xrootd/
 
 echo "root -l -b -q macro.C++"
 echo "First = $FIRST and last file = $LAST"   
@@ -17,9 +23,9 @@ EOF
 
 echo "Done all jobs!"
 
-destination="/path/to/output/file/"
+#destination="/path/to/output/file/"
 
-echo "Copying output files to " $destination
+#echo "Copying output files to " $destination
 
-mv test_outputFile_$LAST.root $destination 
+#mv test_outputFile_$LAST.root $destination 
 
