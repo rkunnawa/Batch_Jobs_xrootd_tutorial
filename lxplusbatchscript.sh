@@ -1,9 +1,9 @@
 #!/bin/bash
-/afs/cern.ch/work/r/rkunnawa/BatchJobsTutorial/CMSSW_5_3_20/src/
+cd /afs/cern.ch/work/r/rkunnawa/BatchJobsTutorial/CMSSW_5_3_20/src/
 #cmsenv
 eval `scramv1 runtime -sh`
 
-/afs/cern.ch/work/r/rkunnawa/BatchJobsTutorial/CMSSW_5_3_20/src/
+cd /afs/cern.ch/work/r/rkunnawa/BatchJobsTutorial/CMSSW_5_3_20/src/
 
 nJobs=2 
 i=0
