@@ -1,14 +1,20 @@
 # Batch_Jobs_xrootd_tutorial
 
-Get a CMSSW_5_3_20 environment:
+Forked from raghav's github https://github.com/rkunnawa/Batch_Jobs_xrootd_tutorial  
+Modifications:  
+	Added lines to submit.sh to make proxy work  
+	Set printDebug = true; to run all files set to false  
+	
+Get a CMSSW_5_3_20 environment:  
+  
+$ cmsrel CMSSW_5_3_20  
 
-$ cmsrel CMSSW_5_3_20
+$ cd CMSSW_5_3_20/src/  
+  
+$ cmsenv  
 
-$ cd CMSSW_5_3_20/src/
-
-$ cmsenv
-
-$ voms-proxy-init --voms cms -hours 120
+$ voms-proxy-init -valid 192:00 --out ~/x509_user_proxy/proxy   
+//If you do not have a folder ~/x509_user_proxy create it
 
 the last command makes sure you have a proxy for a long time 
 

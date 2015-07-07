@@ -1,9 +1,9 @@
 #!/bin/bash
-cd /afs/cern.ch/work/r/rkunnawa/BatchJobsTutorial/CMSSW_5_3_20/src/
+cd /afs/cern.ch/work/i/ihuntisa/xrootd/CMSSW_5_3_20/src/Batch_Jobs_xrootd_tutorial/
 #cmsenv
 eval `scramv1 runtime -sh`
 
-cd /afs/cern.ch/work/r/rkunnawa/BatchJobsTutorial/CMSSW_5_3_20/src/
+cd /afs/cern.ch/work/i/ihuntisa/xrootd/CMSSW_5_3_20/src/Batch_Jobs_xrootd_tutorial/
 
 nJobs=2 
 i=0
@@ -14,7 +14,7 @@ do
   export FIRST=$start  
   export LAST=$end 
   echo "First = $FIRST and last file = $LAST"   
-  bsub -R "pool>5000" -M 3000000 -q 1nd -J merge_job_${i} < /afs/cern.ch/work/r/rkunnawa/BatchJobsTutorial/CMSSW_5_3_20/src/submit.sh
+  bsub -R "pool>5000" -M 3000000 -q 1nd -J merge_job_${i} < /afs/cern.ch/work/i/ihuntisa/xrootd/CMSSW_5_3_20/src/Batch_Jobs_xrootd_tutorial/submit.sh
   let "i++"
 done
 

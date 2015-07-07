@@ -42,7 +42,7 @@ TStopwatch timer;
 void macro(const int startfile=0, const int endfile=1){
 
   TH1::SetDefaultSumw2();
-  bool printDebug = false;
+  bool printDebug = true;
   
   timer.Start();
   
